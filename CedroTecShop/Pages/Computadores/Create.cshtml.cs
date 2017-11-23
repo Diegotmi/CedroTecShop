@@ -1,13 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using CedroTecShop.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using CedroTecShop.Models;
 
-namespace CedroTecShop.Pages.Computador
+namespace CedroTecShop.Pages.Computadores
 {
     public class CreateModel : PageModel
     {
