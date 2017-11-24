@@ -2,7 +2,39 @@
 @model CedroTecShop.Pages.ShopModel
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    
+  *@
+<h2>Shop</h2>
+
+<p>
+    <a> Adicionar ao Carrinho</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Computadores[0].Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Computadores[0].Preco)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Computadores) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <input type="submit" asp-page-handler="JoinList" value="Join" />
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
