@@ -31,10 +31,25 @@
                 @Html.DisplayFor(modelItem => item.Preco)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <input type="submit" asp-page-handler="JoinList" value="Join" />
+                <button type="button" onclick='adicionaAoCarinho(@Json.Serialize(item))'>Adicionar ao carrinho</button>
             </td>
         </tr>
     }
+    </tbody>
+</table>
+
+Parcelas: <input type="number" id="qtdParcelas" value="1"/>
+<button onclick="calculaPrecoParcelas()">Calcular</button>
+<span id="numeroParcelas">1</span> X R$<span id ="valorParcela">0.00</span> -> Total: R$ <span id="valorFinal"></span>
+
+<table class=" table" id="carrinho">
+    <thead>
+    <tr>
+        <th>Descrição</th>
+        <th>Preço</th>
+    </tr>
+    </thead>
+    <tbody>
+   
     </tbody>
 </table>
