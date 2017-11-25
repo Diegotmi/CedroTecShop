@@ -2,16 +2,14 @@
 
 var carrinho = []
 
-$("#numeroParcelas").bind('change',
-    function() {
-        calculaPrecoParcelas()
-
-    });
+$("#numeroParcelas").bind('change', function () {
+    calculaPrecoParcelas()
+});
 
 function adicionaAoCarrinho(item) {
     carrinho.push(item)
     calculaPrecoParcelas()
-    $("#carrinho > body").append("<td></td>" + item.descricao + "<td></td>" + item.preco.toFixed(2) + "<td></td>")
+    $("#carrinho > tbody").append("<tr><td>" + item.descricao + "</td><td>" + item.preco.toFixed(2) + "</td></tr>")
 }
 
 function calculaPrecoParcelas() {
@@ -25,9 +23,9 @@ function calculaPrecoParcelas() {
     if (quantidadeParcelas == 1) {
         valorParcela = (precoTotal * 0.9)
     } else {
-         for (var i = 1; i < quantidadeParcelas; i++) {
-             precoTotal += (precoTotal * 0*2)
-        } 
+        for (var i = 1; i < quantidadeParcelas; i++) {
+            precoTotal += (precoTotal * 0.02)
+        }
         valorParcela = (precoTotal / quantidadeParcelas)
     }
     $("#numeroParcelas").text(quantidadeParcelas)

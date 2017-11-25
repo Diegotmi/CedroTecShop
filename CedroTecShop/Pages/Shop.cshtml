@@ -31,7 +31,7 @@
                 @Html.DisplayFor(modelItem => item.Preco)
             </td>
             <td>
-                <button type="button" onclick='adicionaAoCarinho(@Json.Serialize(item))'>Adicionar ao carrinho</button>
+                <button type="button" onclick='adicionaAoCarrinho(@Json.Serialize(item))'>Adicionar ao carrinho</button>
             </td>
         </tr>
     }
@@ -40,9 +40,9 @@
 
 Parcelas: <input type="number" id="qtdParcelas" value="1"/>
 <button onclick="calculaPrecoParcelas()">Calcular</button>
-<span id="numeroParcelas">1</span> X R$<span id ="valorParcela">0.00</span> -> Total: R$ <span id="valorFinal"></span>
+<span id="numeroParcelas">1</span> X R$ <span id="valorParcela">0.00</span> -> Total: R$ <span id="valorFinal">0.00</span>
 
-<table class=" table" id="carrinho">
+<table  class="table" id="carrinho">
     <thead>
     <tr>
         <th>Descrição</th>
@@ -50,6 +50,5 @@ Parcelas: <input type="number" id="qtdParcelas" value="1"/>
     </tr>
     </thead>
     <tbody>
-   
     </tbody>
 </table>
